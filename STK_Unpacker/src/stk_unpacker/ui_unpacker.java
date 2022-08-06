@@ -22,8 +22,9 @@ public class ui_unpacker extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         bg_toolbar = new javax.swing.JPanel();
         btn_clear = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        app_logo = new javax.swing.JLabel();
         btn_about1 = new javax.swing.JButton();
+        stalker_icon = new javax.swing.JLabel();
         txt_db_path = new javax.swing.JTextField();
         lbl_db_path = new javax.swing.JLabel();
         spt_db_path = new javax.swing.JSeparator();
@@ -34,6 +35,8 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_select_path2 = new javax.swing.JButton();
         bg_unpack = new javax.swing.JPanel();
         btn_unpack = new javax.swing.JButton();
+        box_game = new javax.swing.JComboBox<>();
+        lbl_unpacked_path1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("S.T.A.L.K.E.R. Database Unpacker");
@@ -54,7 +57,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_clear.setText("Clear");
         btn_clear.setBorderPainted(false);
         btn_clear.setContentAreaFilled(false);
-        btn_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_clear.setDefaultCapable(false);
         btn_clear.setFocusPainted(false);
         btn_clear.setFocusable(false);
@@ -66,10 +69,10 @@ public class ui_unpacker extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/stalker_icon.png"))); // NOI18N
-        jLabel1.setText("CS/CoP Unpacker");
+        app_logo.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        app_logo.setForeground(new java.awt.Color(255, 255, 255));
+        app_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_cs_cop.png"))); // NOI18N
+        app_logo.setText("SoC/CS/CoP Unpacker");
 
         btn_about1.setBackground(new java.awt.Color(242, 166, 50));
         btn_about1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
@@ -78,7 +81,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_about1.setBorder(null);
         btn_about1.setBorderPainted(false);
         btn_about1.setContentAreaFilled(false);
-        btn_about1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_about1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_about1.setDefaultCapable(false);
         btn_about1.setFocusPainted(false);
         btn_about1.setFocusable(false);
@@ -89,28 +92,35 @@ public class ui_unpacker extends javax.swing.JFrame {
             }
         });
 
+        stalker_icon.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
+        stalker_icon.setForeground(new java.awt.Color(255, 255, 255));
+        stalker_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_soc.png"))); // NOI18N
+
         javax.swing.GroupLayout bg_toolbarLayout = new javax.swing.GroupLayout(bg_toolbar);
         bg_toolbar.setLayout(bg_toolbarLayout);
         bg_toolbarLayout.setHorizontalGroup(
             bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg_toolbarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(stalker_icon)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(app_logo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_clear)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_about1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16))
+                .addContainerGap())
         );
         bg_toolbarLayout.setVerticalGroup(
             bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(bg_toolbarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_clear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_about1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE, false)
+                    .addComponent(app_logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stalker_icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_about1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         txt_db_path.setBackground(new java.awt.Color(29, 29, 29));
@@ -119,11 +129,11 @@ public class ui_unpacker extends javax.swing.JFrame {
 
         lbl_db_path.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_db_path.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_db_path.setText("Database path (Input):");
+        lbl_db_path.setText("DB file path (Input):");
 
         lbl_unpacked_path.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
         lbl_unpacked_path.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_unpacked_path.setText("Unpacked files path (Output):");
+        lbl_unpacked_path.setText("Unpacked folder path (Output):");
 
         txt_unpacked_path.setBackground(new java.awt.Color(29, 29, 29));
         txt_unpacked_path.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,7 +144,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_select_path1.setBorder(null);
         btn_select_path1.setBorderPainted(false);
         btn_select_path1.setContentAreaFilled(false);
-        btn_select_path1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_select_path1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_select_path1.setFocusPainted(false);
         btn_select_path1.setRolloverEnabled(false);
         btn_select_path1.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +158,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_select_path2.setBorder(null);
         btn_select_path2.setBorderPainted(false);
         btn_select_path2.setContentAreaFilled(false);
-        btn_select_path2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_select_path2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_select_path2.setFocusPainted(false);
         btn_select_path2.setRolloverEnabled(false);
         btn_select_path2.addActionListener(new java.awt.event.ActionListener() {
@@ -165,7 +175,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_unpack.setBorder(null);
         btn_unpack.setBorderPainted(false);
         btn_unpack.setContentAreaFilled(false);
-        btn_unpack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_unpack.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btn_unpack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 start_unpacking(evt);
@@ -185,66 +195,72 @@ public class ui_unpacker extends javax.swing.JFrame {
                 .addComponent(btn_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        box_game.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CS/CoP", "SoC" }));
+        box_game.setOpaque(true);
+
+        lbl_unpacked_path1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
+        lbl_unpacked_path1.setForeground(new java.awt.Color(255, 255, 255));
+        lbl_unpacked_path1.setText("Game:");
+
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(bg_toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txt_unpacked_path, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                                    .addComponent(lbl_db_path)
-                                    .addGap(180, 180, 180))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lbl_unpacked_path)
-                                    .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(spt_db_path, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(txt_db_path, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE))))
-                            .addComponent(spt_unpacked_path))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_select_path2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_select_path1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(109, 109, 109)
+                .addGap(22, 22, 22)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_unpacked_path, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lbl_unpacked_path)
+                    .addComponent(spt_db_path, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txt_db_path, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+                    .addComponent(spt_unpacked_path)
+                    .addComponent(lbl_db_path)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
+                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbl_unpacked_path1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(box_game, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(bg_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btn_select_path2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn_select_path1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         backgroundLayout.setVerticalGroup(
             backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(bg_toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_db_path)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(txt_db_path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bg_toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl_db_path)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(spt_db_path, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txt_db_path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btn_select_path1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spt_db_path, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
                         .addComponent(lbl_unpacked_path)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_unpacked_path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_unpacked_path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_select_path2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spt_unpacked_path, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(lbl_unpacked_path1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(spt_unpacked_path, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addComponent(btn_select_path2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30)
-                .addComponent(bg_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                        .addComponent(box_game, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bg_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(71, 71, 71))
         );
 
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 320));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 280));
 
         getAccessibleContext().setAccessibleName("Unpacker");
 
@@ -331,21 +347,22 @@ public class ui_unpacker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel app_logo;
     private javax.swing.JPanel background;
     private javax.swing.JPanel bg_toolbar;
     private javax.swing.JPanel bg_unpack;
+    private javax.swing.JComboBox<String> box_game;
     private javax.swing.JButton btn_about1;
     private javax.swing.JButton btn_clear;
     private javax.swing.JButton btn_select_path1;
     private javax.swing.JButton btn_select_path2;
     private javax.swing.JButton btn_unpack;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lbl_db_path;
     private javax.swing.JLabel lbl_unpacked_path;
+    private javax.swing.JLabel lbl_unpacked_path1;
     private javax.swing.JSeparator spt_db_path;
     private javax.swing.JSeparator spt_unpacked_path;
+    private javax.swing.JLabel stalker_icon;
     private javax.swing.JTextField txt_db_path;
     private javax.swing.JTextField txt_unpacked_path;
     // End of variables declaration//GEN-END:variables
