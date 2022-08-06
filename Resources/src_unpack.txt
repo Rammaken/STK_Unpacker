@@ -1,0 +1,1 @@
+converter.exe -unpack -xdb INPUT -dir OUTPUT
