@@ -12,7 +12,7 @@
       <Color blue="1d" green="1d" red="1d" type="rgb"/>
     </Property>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-      <Color id="Default Cursor"/>
+      <Color id="Cursor Por defecto"/>
     </Property>
     <Property name="locationByPlatform" type="boolean" value="true"/>
     <Property name="name" type="java.lang.String" value="ui_unpacker" noResource="true"/>
@@ -201,7 +201,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
                 <Property name="defaultCapable" type="boolean" value="false"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -245,7 +245,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
                 <Property name="defaultCapable" type="boolean" value="false"/>
                 <Property name="focusPainted" type="boolean" value="false"/>
@@ -335,7 +335,7 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
             <Property name="rolloverEnabled" type="boolean" value="false"/>
@@ -356,7 +356,7 @@
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
             <Property name="focusPainted" type="boolean" value="false"/>
             <Property name="rolloverEnabled" type="boolean" value="false"/>
@@ -403,7 +403,7 @@
                 <Property name="borderPainted" type="boolean" value="false"/>
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
+                  <Color id="Cursor Por defecto"/>
                 </Property>
               </Properties>
               <Events>
@@ -436,7 +436,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="SoC (RU)"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
         </Component>
@@ -453,7 +453,7 @@
             </Property>
             <Property name="text" type="java.lang.String" value="CS/CoP"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
         </Component>
@@ -471,7 +471,7 @@
             <Property name="selected" type="boolean" value="true"/>
             <Property name="text" type="java.lang.String" value="SoC (WW)"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Hand Cursor"/>
+              <Color id="Cursor Por defecto"/>
             </Property>
           </Properties>
         </Component>

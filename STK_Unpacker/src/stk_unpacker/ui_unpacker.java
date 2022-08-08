@@ -10,7 +10,7 @@ public class ui_unpacker extends javax.swing.JFrame {
 
     static String unpacked_path = ".";
     static String db_path = ".";
-    static String app_version = "1.0";
+    static String app_version = "1.1";
     static String file_type = "-xdb";
     public ui_unpacker() {
         initComponents();
@@ -317,9 +317,10 @@ public class ui_unpacker extends javax.swing.JFrame {
             file_type = "-2947ru";
         }
         
-        // Generates the unpacker run file
+        // Generates the unpacker command line
         String unpacker_data = "converter.exe -unpack " + file_type + " \"" + db_path + "\"" + " -dir " + "\"" + unpacked_path + "\"";
 
+        // Executes the CMD with the unpacker data to unpack the files
         try {
             Runtime.getRuntime().exec("cmd.exe /c start cmd.exe /k \" start " + unpacker_data);
 
