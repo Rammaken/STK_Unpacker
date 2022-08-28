@@ -422,10 +422,10 @@ public class ui_unpacker extends javax.swing.JFrame {
         
         // Checks which binaries are selected
         if(rdn_bin_x86.isSelected()) {
-            var_bin_arc = "bin\\xrUnpacker32.exe";       // 32 Bits
+            var_bin_arc = "bin\\xrUnpacker32.exe";    // 32 Bits
         }
         if(rdn_bin_x64.isSelected()) {
-            var_bin_arc = "binaries\\xrUnpacker64.exe";  // 64 Bits
+            var_bin_arc = "bin\\xrUnpacker64.exe";    // 64 Bits
         }
         
         // Generates the command line for the xrUnpacker binarie
