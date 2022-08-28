@@ -6,6 +6,7 @@
 # Brief
 A portable and lightweight game files unpacker for S.T.A.L.K.E.R.: Clear Sky and S.T.A.L.K.E.R.: Call of Pripyat.
 This little app was designed for modders who wants access to the packed stalker files, its pretty noob friendly and easy to use and has no extra features.
+
 ![Preview](preview.png)
 
 # Features
