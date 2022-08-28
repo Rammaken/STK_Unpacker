@@ -1,6 +1,6 @@
 # S.T.A.L.K.E.R. Database Unpacker
 + Author: Rammaken
-+ Version: 1.0
++ Version: 1.1
 + Programming Language: Java
 
 # Brief
@@ -8,11 +8,12 @@ A portable and lightweight game files unpacker for S.T.A.L.K.E.R.: Clear Sky and
 This little app was designed for modders who wants access to the packed stalker files, its pretty noob friendly and easy to use and has no extra features.
 
 # Features
-+ Unpacks any **xdb** files architecture:
++ Unpacks any **.db** file from game files.
 1. S.T.A.L.K.E.R.: Call of Pripyat (+ Mods)
 2. S.T.A.L.K.E.R.: Clear Sky (+ Mods)
+3. S.T.A.L.K.E.R.: Shadow of Chernobyl (+ Mods)
 
-*Doesn't works for Shadow of Chernobyl because it uses a different compression file architecture...*
+*Doesn't works for SoC Builds because it uses a different format...*
 
 # Requeriments
 Needs Java Runtime Environment 1.8 to run the app.
