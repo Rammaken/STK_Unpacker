@@ -24,6 +24,14 @@ public class ui_unpacker extends javax.swing.JFrame {
         rdn_bin_arc = new javax.swing.ButtonGroup();
         ui_about = new javax.swing.JFrame();
         jLabel5 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
         pnl_paths = new javax.swing.JPanel();
         str_db_input_path = new javax.swing.JLabel();
         path_db_input = new javax.swing.JTextField();
@@ -49,23 +57,82 @@ public class ui_unpacker extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         menu_about = new javax.swing.JMenuItem();
 
+        ui_about.setTitle("About");
+        ui_about.setResizable(false);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("S.T.A.L.K.E.R. Database Unpacker");
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Developed by Rammaken");
+
+        jLabel7.setText("App version: v1.2");
+
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/author_portrait.jpg"))); // NOI18N
+
+        jTextField1.setEditable(false);
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField1.setText("https://github.com/Rammaken");
+        jTextField1.setAutoscrolls(false);
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("This program is a free and portable game files unpacker for S.T.A.L.K.E.R. series totally meant for modding or learning porpuses.\nAll assets provided by this program are property of GSC Game World.\n\nAll credits for the converter binaries goes to their respective authors (I don't know who are them so...)\n\nThis app was developed with Java using Netbeans IDE.");
+        jTextArea1.setWrapStyleWord(true);
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/author_flag.png"))); // NOI18N
+        jLabel10.setToolTipText("Maracaibo, Zulia, Venezuela");
 
         javax.swing.GroupLayout ui_aboutLayout = new javax.swing.GroupLayout(ui_about.getContentPane());
         ui_about.getContentPane().setLayout(ui_aboutLayout);
         ui_aboutLayout.setHorizontalGroup(
             ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ui_aboutLayout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(jLabel5)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(ui_aboutLayout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10))
+                    .addGroup(ui_aboutLayout.createSequentialGroup()
+                        .addGroup(ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(ui_aboutLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1)))
+                .addContainerGap())
         );
         ui_aboutLayout.setVerticalGroup(
             ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ui_aboutLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5)
-                .addContainerGap(278, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ui_aboutLayout.createSequentialGroup()
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel7))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -243,6 +310,11 @@ public class ui_unpacker extends javax.swing.JFrame {
 
         btn_reset.setForeground(new java.awt.Color(204, 0, 0));
         btn_reset.setText("Reset");
+        btn_reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                reset(evt);
+            }
+        });
 
         btn_unpack.setForeground(new java.awt.Color(0, 204, 51));
         btn_unpack.setText("Unpack");
@@ -255,6 +327,11 @@ public class ui_unpacker extends javax.swing.JFrame {
         jMenu1.setText("Menu");
 
         menu_about.setText("About");
+        menu_about.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                show_about(evt);
+            }
+        });
         jMenu1.add(menu_about);
 
         menu_bar.add(jMenu1);
@@ -273,7 +350,7 @@ public class ui_unpacker extends javax.swing.JFrame {
                         .addComponent(pnl_parameters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btn_reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -358,6 +435,19 @@ public class ui_unpacker extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_unpack
 
+    private void reset(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_reset
+        // Sets all the fields to default values
+        path_db_input.setText("");
+        path_db_output.setText("");
+        rdn_game_cscop.setSelected(true);
+        rdn_bin_x86.setSelected(true);
+    }//GEN-LAST:event_reset
+
+    private void show_about(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_about
+        ui_about.show();
+        ui_about.setSize(491, 385);
+    }//GEN-LAST:event_show_about
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -396,12 +486,20 @@ public class ui_unpacker extends javax.swing.JFrame {
     private javax.swing.JButton btn_select_output_path;
     private javax.swing.JButton btn_unpack;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JMenuItem menu_about;
     private javax.swing.JMenuBar menu_bar;
     private javax.swing.JTextField path_db_input;
