@@ -58,6 +58,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         menu_about = new javax.swing.JMenuItem();
 
         ui_about.setTitle("About");
+        ui_about.setLocationByPlatform(true);
         ui_about.setResizable(false);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -151,7 +152,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_select_input_path.setBorder(null);
         btn_select_input_path.setBorderPainted(false);
         btn_select_input_path.setContentAreaFilled(false);
-        btn_select_input_path.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_select_input_path.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_select_input_path.setFocusPainted(false);
         btn_select_input_path.setRolloverEnabled(false);
         btn_select_input_path.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +168,7 @@ public class ui_unpacker extends javax.swing.JFrame {
         btn_select_output_path.setBorder(null);
         btn_select_output_path.setBorderPainted(false);
         btn_select_output_path.setContentAreaFilled(false);
-        btn_select_output_path.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_select_output_path.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_select_output_path.setFocusPainted(false);
         btn_select_output_path.setRolloverEnabled(false);
         btn_select_output_path.addActionListener(new java.awt.event.ActionListener() {
@@ -218,16 +219,16 @@ public class ui_unpacker extends javax.swing.JFrame {
 
         rdn_group.add(rdn_game_socww);
         rdn_game_socww.setText("SoC (WW)");
-        rdn_game_socww.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        rdn_game_socww.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         rdn_group.add(rdn_game_socru);
         rdn_game_socru.setText("SoC (RU)");
-        rdn_game_socru.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        rdn_game_socru.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         rdn_group.add(rdn_game_cscop);
         rdn_game_cscop.setSelected(true);
         rdn_game_cscop.setText("CS/CoP");
-        rdn_game_cscop.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        rdn_game_cscop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -236,11 +237,11 @@ public class ui_unpacker extends javax.swing.JFrame {
         rdn_bin_arc.add(rdn_bin_x86);
         rdn_bin_x86.setSelected(true);
         rdn_bin_x86.setText("x86 / 32 Bits");
-        rdn_bin_x86.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        rdn_bin_x86.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         rdn_bin_arc.add(rdn_bin_x64);
         rdn_bin_x64.setText("x64 / 64 Bits");
-        rdn_bin_x64.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        rdn_bin_x64.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_cs_cop.png"))); // NOI18N
 
@@ -310,6 +311,7 @@ public class ui_unpacker extends javax.swing.JFrame {
 
         btn_reset.setForeground(new java.awt.Color(204, 0, 0));
         btn_reset.setText("Reset");
+        btn_reset.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 reset(evt);
@@ -318,6 +320,7 @@ public class ui_unpacker extends javax.swing.JFrame {
 
         btn_unpack.setForeground(new java.awt.Color(0, 204, 51));
         btn_unpack.setText("Unpack");
+        btn_unpack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_unpack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unpack(evt);
@@ -325,8 +328,11 @@ public class ui_unpacker extends javax.swing.JFrame {
         });
 
         jMenu1.setText("Menu");
+        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        menu_about.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.SHIFT_DOWN_MASK));
         menu_about.setText("About");
+        menu_about.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         menu_about.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 show_about(evt);
