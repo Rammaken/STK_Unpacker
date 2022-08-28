@@ -1,17 +1,17 @@
 package stk_unpacker;
 
-// Librarys
-
+// Libraries
 import java.io.File;
 import java.io.IOException;
 import javax.swing.*;
 
 public class ui_unpacker extends javax.swing.JFrame {
-
-    static String unpacked_path = ".";
-    static String db_path = ".";
-    static String app_version = "1.1";
-    static String file_type = "-xdb";
+    // Global vars
+    static String var_input_path = ".";
+    static String var_output_path = ".";
+    static String var_game = "-xdb";
+    static String var_bin_arc = "bin\\xrUnpacker32.exe";
+    
     public ui_unpacker() {
         initComponents();
     }
@@ -21,348 +21,342 @@ public class ui_unpacker extends javax.swing.JFrame {
     private void initComponents() {
 
         rdn_group = new javax.swing.ButtonGroup();
-        background = new javax.swing.JPanel();
-        bg_toolbar = new javax.swing.JPanel();
-        btn_clear = new javax.swing.JButton();
-        app_logo = new javax.swing.JLabel();
-        btn_about1 = new javax.swing.JButton();
-        stalker_icon = new javax.swing.JLabel();
-        txt_db_path = new javax.swing.JTextField();
-        lbl_db_path = new javax.swing.JLabel();
-        spt_db_path = new javax.swing.JSeparator();
-        lbl_unpacked_path = new javax.swing.JLabel();
-        txt_unpacked_path = new javax.swing.JTextField();
-        spt_unpacked_path = new javax.swing.JSeparator();
-        btn_select_path1 = new javax.swing.JButton();
-        btn_select_path2 = new javax.swing.JButton();
-        bg_unpack = new javax.swing.JPanel();
-        btn_unpack = new javax.swing.JButton();
-        lbl_unpacked_path1 = new javax.swing.JLabel();
+        rdn_bin_arc = new javax.swing.ButtonGroup();
+        ui_about = new javax.swing.JFrame();
+        jLabel5 = new javax.swing.JLabel();
+        pnl_paths = new javax.swing.JPanel();
+        str_db_input_path = new javax.swing.JLabel();
+        path_db_input = new javax.swing.JTextField();
+        btn_select_input_path = new javax.swing.JButton();
+        str_db_output_path = new javax.swing.JLabel();
+        path_db_output = new javax.swing.JTextField();
+        btn_select_output_path = new javax.swing.JButton();
+        pnl_parameters = new javax.swing.JPanel();
+        str_game = new javax.swing.JLabel();
+        rdn_game_socww = new javax.swing.JRadioButton();
         rdn_game_socru = new javax.swing.JRadioButton();
         rdn_game_cscop = new javax.swing.JRadioButton();
-        rdn_game_socww = new javax.swing.JRadioButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        rdn_bin_x86 = new javax.swing.JRadioButton();
+        rdn_bin_x64 = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btn_reset = new javax.swing.JButton();
+        btn_unpack = new javax.swing.JButton();
+        menu_bar = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        menu_about = new javax.swing.JMenuItem();
+
+        jLabel5.setText("S.T.A.L.K.E.R. Database Unpacker");
+
+        javax.swing.GroupLayout ui_aboutLayout = new javax.swing.GroupLayout(ui_about.getContentPane());
+        ui_about.getContentPane().setLayout(ui_aboutLayout);
+        ui_aboutLayout.setHorizontalGroup(
+            ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ui_aboutLayout.createSequentialGroup()
+                .addGap(96, 96, 96)
+                .addComponent(jLabel5)
+                .addContainerGap(133, Short.MAX_VALUE))
+        );
+        ui_aboutLayout.setVerticalGroup(
+            ui_aboutLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ui_aboutLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addContainerGap(278, Short.MAX_VALUE))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("S.T.A.L.K.E.R. Database Unpacker");
-        setBackground(new java.awt.Color(29, 29, 29));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocationByPlatform(true);
         setName("ui_unpacker"); // NOI18N
         setResizable(false);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        background.setBackground(new java.awt.Color(29, 29, 29));
+        pnl_paths.setBorder(javax.swing.BorderFactory.createTitledBorder("Paths"));
 
-        bg_toolbar.setBackground(new java.awt.Color(17, 17, 17));
+        str_db_input_path.setText("Database file path:");
 
-        btn_clear.setBackground(new java.awt.Color(242, 166, 50));
-        btn_clear.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_clear.setForeground(new java.awt.Color(255, 255, 255));
-        btn_clear.setText("Clear");
-        btn_clear.setBorderPainted(false);
-        btn_clear.setContentAreaFilled(false);
-        btn_clear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_clear.setDefaultCapable(false);
-        btn_clear.setFocusPainted(false);
-        btn_clear.setFocusable(false);
-        btn_clear.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_clear.setRolloverEnabled(false);
-        btn_clear.addActionListener(new java.awt.event.ActionListener() {
+        btn_select_input_path.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_folder_path.png"))); // NOI18N
+        btn_select_input_path.setToolTipText("Select path...");
+        btn_select_input_path.setBorder(null);
+        btn_select_input_path.setBorderPainted(false);
+        btn_select_input_path.setContentAreaFilled(false);
+        btn_select_input_path.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_select_input_path.setFocusPainted(false);
+        btn_select_input_path.setRolloverEnabled(false);
+        btn_select_input_path.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clear(evt);
+                select_input_path(evt);
             }
         });
 
-        app_logo.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        app_logo.setForeground(new java.awt.Color(255, 255, 255));
-        app_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_cs_cop.png"))); // NOI18N
-        app_logo.setText("SoC/CS/CoP Unpacker");
+        str_db_output_path.setText("Unpacked files output path:");
 
-        btn_about1.setBackground(new java.awt.Color(242, 166, 50));
-        btn_about1.setFont(new java.awt.Font("Roboto", 0, 12)); // NOI18N
-        btn_about1.setForeground(new java.awt.Color(255, 255, 255));
-        btn_about1.setText("About");
-        btn_about1.setBorder(null);
-        btn_about1.setBorderPainted(false);
-        btn_about1.setContentAreaFilled(false);
-        btn_about1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_about1.setDefaultCapable(false);
-        btn_about1.setFocusPainted(false);
-        btn_about1.setFocusable(false);
-        btn_about1.setRolloverEnabled(false);
-        btn_about1.addActionListener(new java.awt.event.ActionListener() {
+        btn_select_output_path.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_folder_path.png"))); // NOI18N
+        btn_select_output_path.setToolTipText("Select path...");
+        btn_select_output_path.setBorder(null);
+        btn_select_output_path.setBorderPainted(false);
+        btn_select_output_path.setContentAreaFilled(false);
+        btn_select_output_path.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btn_select_output_path.setFocusPainted(false);
+        btn_select_output_path.setRolloverEnabled(false);
+        btn_select_output_path.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                show_info(evt);
+                select_output_path(evt);
             }
         });
 
-        stalker_icon.setFont(new java.awt.Font("Roboto", 1, 12)); // NOI18N
-        stalker_icon.setForeground(new java.awt.Color(255, 255, 255));
-        stalker_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_soc.png"))); // NOI18N
-
-        javax.swing.GroupLayout bg_toolbarLayout = new javax.swing.GroupLayout(bg_toolbar);
-        bg_toolbar.setLayout(bg_toolbarLayout);
-        bg_toolbarLayout.setHorizontalGroup(
-            bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg_toolbarLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnl_pathsLayout = new javax.swing.GroupLayout(pnl_paths);
+        pnl_paths.setLayout(pnl_pathsLayout);
+        pnl_pathsLayout.setHorizontalGroup(
+            pnl_pathsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_pathsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(stalker_icon)
+                .addGroup(pnl_pathsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(str_db_output_path)
+                    .addComponent(str_db_input_path)
+                    .addComponent(path_db_input, javax.swing.GroupLayout.DEFAULT_SIZE, 417, Short.MAX_VALUE)
+                    .addComponent(path_db_output))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(app_logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_about1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        bg_toolbarLayout.setVerticalGroup(
-            bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(bg_toolbarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(stalker_icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg_toolbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_about1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_clear, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(app_logo))
+                .addGroup(pnl_pathsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_select_input_path, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_select_output_path, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-
-        txt_db_path.setBackground(new java.awt.Color(29, 29, 29));
-        txt_db_path.setForeground(new java.awt.Color(255, 255, 255));
-        txt_db_path.setBorder(null);
-
-        lbl_db_path.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        lbl_db_path.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_db_path.setText("DB file path (Input):");
-
-        lbl_unpacked_path.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        lbl_unpacked_path.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_unpacked_path.setText("Unpacked folder path (Output):");
-
-        txt_unpacked_path.setBackground(new java.awt.Color(29, 29, 29));
-        txt_unpacked_path.setForeground(new java.awt.Color(255, 255, 255));
-        txt_unpacked_path.setBorder(null);
-
-        btn_select_path1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_folder_path.png"))); // NOI18N
-        btn_select_path1.setToolTipText("Select path...");
-        btn_select_path1.setBorder(null);
-        btn_select_path1.setBorderPainted(false);
-        btn_select_path1.setContentAreaFilled(false);
-        btn_select_path1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_select_path1.setFocusPainted(false);
-        btn_select_path1.setRolloverEnabled(false);
-        btn_select_path1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select_db_path(evt);
-            }
-        });
-
-        btn_select_path2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_folder_path.png"))); // NOI18N
-        btn_select_path2.setToolTipText("Select path...");
-        btn_select_path2.setBorder(null);
-        btn_select_path2.setBorderPainted(false);
-        btn_select_path2.setContentAreaFilled(false);
-        btn_select_path2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_select_path2.setFocusPainted(false);
-        btn_select_path2.setRolloverEnabled(false);
-        btn_select_path2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                select_unpacked_path(evt);
-            }
-        });
-
-        bg_unpack.setBackground(new java.awt.Color(116, 184, 0));
-
-        btn_unpack.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        btn_unpack.setForeground(new java.awt.Color(255, 255, 255));
-        btn_unpack.setText("Unpack");
-        btn_unpack.setBorder(null);
-        btn_unpack.setBorderPainted(false);
-        btn_unpack.setContentAreaFilled(false);
-        btn_unpack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_unpack.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                start_unpacking(evt);
-            }
-        });
-
-        javax.swing.GroupLayout bg_unpackLayout = new javax.swing.GroupLayout(bg_unpack);
-        bg_unpack.setLayout(bg_unpackLayout);
-        bg_unpackLayout.setHorizontalGroup(
-            bg_unpackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_unpack, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
-        );
-        bg_unpackLayout.setVerticalGroup(
-            bg_unpackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bg_unpackLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btn_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+        pnl_pathsLayout.setVerticalGroup(
+            pnl_pathsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_pathsLayout.createSequentialGroup()
+                .addGroup(pnl_pathsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_select_input_path, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnl_pathsLayout.createSequentialGroup()
+                        .addComponent(str_db_input_path)
+                        .addGap(4, 4, 4)
+                        .addComponent(path_db_input, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnl_pathsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(pnl_pathsLayout.createSequentialGroup()
+                        .addComponent(str_db_output_path)
+                        .addGap(4, 4, 4)
+                        .addComponent(path_db_output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_select_output_path, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
-        lbl_unpacked_path1.setFont(new java.awt.Font("Roboto", 0, 14)); // NOI18N
-        lbl_unpacked_path1.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_unpacked_path1.setText("Game:");
+        pnl_parameters.setBorder(javax.swing.BorderFactory.createTitledBorder("Parameters"));
 
-        rdn_game_socru.setBackground(new java.awt.Color(29, 29, 29));
-        rdn_group.add(rdn_game_socru);
-        rdn_game_socru.setForeground(new java.awt.Color(255, 255, 255));
-        rdn_game_socru.setText("SoC (RU)");
-        rdn_game_socru.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        str_game.setText("Game:");
 
-        rdn_game_cscop.setBackground(new java.awt.Color(29, 29, 29));
-        rdn_group.add(rdn_game_cscop);
-        rdn_game_cscop.setForeground(new java.awt.Color(255, 255, 255));
-        rdn_game_cscop.setText("CS/CoP");
-        rdn_game_cscop.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        rdn_game_socww.setBackground(new java.awt.Color(29, 29, 29));
         rdn_group.add(rdn_game_socww);
-        rdn_game_socww.setForeground(new java.awt.Color(255, 255, 255));
-        rdn_game_socww.setSelected(true);
         rdn_game_socww.setText("SoC (WW)");
-        rdn_game_socww.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        rdn_game_socww.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg_toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        rdn_group.add(rdn_game_socru);
+        rdn_game_socru.setText("SoC (RU)");
+        rdn_game_socru.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        rdn_group.add(rdn_game_cscop);
+        rdn_game_cscop.setSelected(true);
+        rdn_game_cscop.setText("CS/CoP");
+        rdn_game_cscop.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jLabel4.setText("Binarie architecture:");
+
+        rdn_bin_arc.add(rdn_bin_x86);
+        rdn_bin_x86.setSelected(true);
+        rdn_bin_x86.setText("x86 / 32 Bits");
+        rdn_bin_x86.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        rdn_bin_arc.add(rdn_bin_x64);
+        rdn_bin_x64.setText("x64 / 64 Bits");
+        rdn_bin_x64.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_cs_cop.png"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_soc.png"))); // NOI18N
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/stk_unpacker/icon_stalker_soc.png"))); // NOI18N
+
+        javax.swing.GroupLayout pnl_parametersLayout = new javax.swing.GroupLayout(pnl_parameters);
+        pnl_parameters.setLayout(pnl_parametersLayout);
+        pnl_parametersLayout.setHorizontalGroup(
+            pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_parametersLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_parametersLayout.createSequentialGroup()
+                        .addGroup(pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rdn_game_socww)
                             .addComponent(rdn_game_socru)
-                            .addGroup(backgroundLayout.createSequentialGroup()
-                                .addComponent(rdn_game_socww)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rdn_game_cscop))
-                            .addComponent(lbl_unpacked_path1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addComponent(bg_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(txt_unpacked_path, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(spt_db_path, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txt_db_path)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lbl_unpacked_path)
-                            .addComponent(lbl_db_path))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(spt_unpacked_path))
+                            .addComponent(rdn_game_cscop)))
+                    .addComponent(str_game))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_select_path2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_select_path1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(rdn_bin_x64)
+                    .addComponent(rdn_bin_x86))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+        pnl_parametersLayout.setVerticalGroup(
+            pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_parametersLayout.createSequentialGroup()
+                .addComponent(str_game)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnl_parametersLayout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(pnl_parametersLayout.createSequentialGroup()
+                        .addComponent(rdn_game_cscop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdn_game_socww, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdn_game_socru)))
+                .addGap(0, 13, Short.MAX_VALUE))
+            .addGroup(pnl_parametersLayout.createSequentialGroup()
+                .addGroup(pnl_parametersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator1)
+                    .addGroup(pnl_parametersLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdn_bin_x86)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rdn_bin_x64)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addComponent(bg_toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(lbl_db_path)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_db_path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_select_path1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spt_db_path, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(lbl_unpacked_path)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_unpacked_path, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_select_path2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(spt_unpacked_path, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl_unpacked_path1)
-                        .addGap(4, 4, 4)
-                        .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rdn_game_socww)
-                            .addComponent(rdn_game_cscop))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rdn_game_socru)
-                        .addGap(61, 61, 61))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(bg_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-        );
 
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 290));
+        btn_reset.setForeground(new java.awt.Color(204, 0, 0));
+        btn_reset.setText("Reset");
+
+        btn_unpack.setForeground(new java.awt.Color(0, 204, 51));
+        btn_unpack.setText("Unpack");
+        btn_unpack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                unpack(evt);
+            }
+        });
+
+        jMenu1.setText("Menu");
+
+        menu_about.setText("About");
+        jMenu1.add(menu_about);
+
+        menu_bar.add(jMenu1);
+
+        setJMenuBar(menu_bar);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pnl_paths, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnl_parameters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(btn_reset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(pnl_paths, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(pnl_parameters, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_unpack, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_reset, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 21, 21))))
+        );
 
         getAccessibleContext().setAccessibleName("Unpacker");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void start_unpacking(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_unpacking
-        
-        // If gamedata is CoP/CS
-        if(rdn_game_cscop.isSelected()) {
-            file_type = "-xdb";
-        }
-        // If gamedata is SoC WorldWide
-        if(rdn_game_socww.isSelected()) {
-            file_type = "-2947ww";
-        }
-        // If gamedata is SoC Russian
-        if(rdn_game_socru.isSelected()) {
-            file_type = "-2947ru";
-        }
-        
-        // Generates the unpacker command line
-        String unpacker_data = "converter.exe -unpack " + file_type + " \"" + db_path + "\"" + " -dir " + "\"" + unpacked_path + "\"";
+    private void select_output_path(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_output_path
+        // Selects gamedata input folder:
+        JFileChooser db_output_choose = new JFileChooser();
+        db_output_choose.setCurrentDirectory(new java.io.File("."));
+        db_output_choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        db_output_choose.showOpenDialog(null);
+        File file_db_output_path = db_output_choose.getSelectedFile();
 
-        // Executes the CMD with the unpacker data to unpack the files
+        path_db_output.setText(file_db_output_path.getAbsolutePath());
+    }//GEN-LAST:event_select_output_path
+
+    private void select_input_path(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_input_path
+        // Selects Database file path
+        JFileChooser db_input_choose = new JFileChooser();
+        db_input_choose.setCurrentDirectory(new java.io.File("."));
+        db_input_choose.showOpenDialog(null);
+        File file_db_input_path = db_input_choose.getSelectedFile();
+
+        path_db_input.setText(file_db_input_path.getAbsolutePath());
+    }//GEN-LAST:event_select_input_path
+
+    private void unpack(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unpack
+        // Declares new values for paths
+        var_input_path = path_db_input.getText();
+        var_output_path = path_db_output.getText();
+        
+        // Checks which format was selected
+        if(rdn_game_cscop.isSelected()) {
+            var_game = "-xdb";     // Clear Sky and Call of Pripyat
+        }
+        if(rdn_game_socww.isSelected()) {
+            var_game = "-2947ww";  // Shadow of Chernobyl Worldwide version
+        }
+        if(rdn_game_socru.isSelected()) {
+            var_game = "-2947ru";  // Shadow of Chernobyl Russian version
+        }
+        
+        // Checks which binaries are selected
+        if(rdn_bin_x86.isSelected()) {
+            var_bin_arc = "bin\\xrUnpacker32.exe";       // 32 Bits
+        }
+        if(rdn_bin_x64.isSelected()) {
+            var_bin_arc = "binaries\\xrUnpacker64.exe";  // 64 Bits
+        }
+        
+        // Generates the command line for the xrUnpacker binarie
+        String var_unpacker_data = "-unpack " + var_game + " \"" + var_input_path + "\"" + " -dir " + "\"" + var_output_path + "\"";
+
+        // Executes xrUnpacker binarie with the data to unpack the files
         try {
-            Runtime.getRuntime().exec("cmd.exe /c start cmd.exe /k \" start " + unpacker_data);
+            Runtime.getRuntime().exec(var_bin_arc + " " + var_unpacker_data);
+            JOptionPane.showMessageDialog(this, "Unpacking\n Check folder: " + var_output_path, "Warning", 1);
 
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Something went wrong... Please, try again");
+            JOptionPane.showMessageDialog(this, "Something went wrong... Please, check your settings and try again");
         }
-    }//GEN-LAST:event_start_unpacking
-
-    private void select_unpacked_path(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_unpacked_path
-        // Selects unpacked outpot folder:
-        JFileChooser unpacked_choose = new JFileChooser();
-        unpacked_choose.setCurrentDirectory(new java.io.File("."));
-        unpacked_choose.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        unpacked_choose.showOpenDialog(null);
-        File file_unpacked_path = unpacked_choose.getSelectedFile();
-
-        unpacked_path = file_unpacked_path.getAbsolutePath();
-        txt_unpacked_path.setText(unpacked_path);
-    }//GEN-LAST:event_select_unpacked_path
-
-    private void select_db_path(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_select_db_path
-        // Selects Database file path
-        JFileChooser db_choose = new JFileChooser();
-        db_choose.setCurrentDirectory(new java.io.File("."));
-        db_choose.showOpenDialog(null);
-        File file_db_path = db_choose.getSelectedFile();
-
-        db_path = file_db_path.getAbsolutePath();
-
-        txt_db_path.setText(db_path);
-    }//GEN-LAST:event_select_db_path
-
-    private void show_info(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_info
-        JOptionPane.showMessageDialog(this, "Author: Rammaken \nVersion: " + app_version + "\nDeveloped with Java using Netbeans IDE");
-    }//GEN-LAST:event_show_info
-
-    private void clear(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clear
-        // Clears path inputs
-        txt_db_path.setText("");
-        txt_unpacked_path.setText("");
-        getToolkit().beep();
-    }//GEN-LAST:event_clear
+    }//GEN-LAST:event_unpack
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -397,26 +391,33 @@ public class ui_unpacker extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel app_logo;
-    private javax.swing.JPanel background;
-    private javax.swing.JPanel bg_toolbar;
-    private javax.swing.JPanel bg_unpack;
-    private javax.swing.JButton btn_about1;
-    private javax.swing.JButton btn_clear;
-    private javax.swing.JButton btn_select_path1;
-    private javax.swing.JButton btn_select_path2;
+    private javax.swing.JButton btn_reset;
+    private javax.swing.JButton btn_select_input_path;
+    private javax.swing.JButton btn_select_output_path;
     private javax.swing.JButton btn_unpack;
-    private javax.swing.JLabel lbl_db_path;
-    private javax.swing.JLabel lbl_unpacked_path;
-    private javax.swing.JLabel lbl_unpacked_path1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JMenuItem menu_about;
+    private javax.swing.JMenuBar menu_bar;
+    private javax.swing.JTextField path_db_input;
+    private javax.swing.JTextField path_db_output;
+    private javax.swing.JPanel pnl_parameters;
+    private javax.swing.JPanel pnl_paths;
+    private javax.swing.ButtonGroup rdn_bin_arc;
+    private javax.swing.JRadioButton rdn_bin_x64;
+    private javax.swing.JRadioButton rdn_bin_x86;
     private javax.swing.JRadioButton rdn_game_cscop;
     private javax.swing.JRadioButton rdn_game_socru;
     private javax.swing.JRadioButton rdn_game_socww;
     private javax.swing.ButtonGroup rdn_group;
-    private javax.swing.JSeparator spt_db_path;
-    private javax.swing.JSeparator spt_unpacked_path;
-    private javax.swing.JLabel stalker_icon;
-    private javax.swing.JTextField txt_db_path;
-    private javax.swing.JTextField txt_unpacked_path;
+    private javax.swing.JLabel str_db_input_path;
+    private javax.swing.JLabel str_db_output_path;
+    private javax.swing.JLabel str_game;
+    private javax.swing.JFrame ui_about;
     // End of variables declaration//GEN-END:variables
 }
