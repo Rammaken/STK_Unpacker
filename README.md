@@ -1,6 +1,6 @@
 # S.T.A.L.K.E.R. Database Unpacker
 + Author: Rammaken
-+ Version: 1.1
++ Version: 1.2
 + Programming Language: Java
 
 # Brief
@@ -14,6 +14,8 @@ This little app was designed for modders who wants access to the packed stalker 
 3. S.T.A.L.K.E.R.: Shadow of Chernobyl (+ Mods)
 
 *Doesn't works for SoC Builds because it uses a different format...*
+
++ 32 Bits & 64 Bits binaries
 
 # Requeriments
 Needs Java Runtime Environment 1.8 to run the app.
